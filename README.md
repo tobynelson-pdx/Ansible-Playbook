@@ -1,2 +1,2 @@
 # Ansible-Playbook
-Ansible playbook for Zerto
+Ansible playbook for authenticating to Zerto
