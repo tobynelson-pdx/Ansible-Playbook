@@ -1,0 +1,19 @@
+{  
+    "DatastoreIdentifier": "vCentermoref.datastoremoref",
+    "GroupName": "Ansible Group",
+    "HostIdentifier": "vCentermoref.hostmoref",
+    "HostRootPassword": "",
+    "MemoryInGb":int,
+    "NetworkIdentifier": "vCentermoref.networkmoref",
+    "UsePublicKeyInsteadOfCredentials": true,
+    "VraNetworkDataApi": {  
+        "DefaultGateway": "GatewayIP",
+        "SubnetMask": "Subnet",
+        "VraIPAddress": "VRAIP",
+        "VraIPConfigurationTypeApi": "Static"
+    }
+}
+  
+
+
+

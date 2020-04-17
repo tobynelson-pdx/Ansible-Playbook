@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks: 
+  - name: VRA Deployment 
+  uri: 
+    url: "https://192.168.111.20:9669/v1/vras"
+    force_basic_auth: yes
+    method: POST     
+    status_code: 200
+    validate_certs: no 
+    headers: 
+      x-zerto-session: x_zerto_session
+      accept: "application/json"
+      content-type: "application/json"
+    body: "{{ lookup('file','vraexample.json') }}"
+    body_format: json
