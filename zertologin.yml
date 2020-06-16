@@ -1,22 +1,22 @@
 ---
 - hosts: localhost
   tasks: 
-  - name: ZVM Login  
-    uri: 
-      url: "https://inpaw0041.amer.corp.xpo.com:9669/v1/session/add"
-      force_basic_auth: yes
-      method: POST
-      user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
-      password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
-      status_code: 200
-      validate_certs: no
-      body_format: json 
-    register: login
+  # - name: ZVM Login  
+  #   uri: 
+  #     url: "https://inpaw0041.amer.corp.xpo.com:9669/v1/session/add"
+  #     force_basic_auth: yes
+  #     method: POST
+  #     user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+  #     password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
+  #     status_code: 200
+  #     validate_certs: no
+  #     body_format: json 
+  #   register: login
 
-  - name: CheckOutPut
-    set_stats:
-      data:
-        ZertoLogin: '{{login}}'
+  # - name: CheckOutPut
+  #   set_stats:
+  #     data:
+  #       ZertoLogin: '{{login}}'
 
   - name: VPG Settings Identifier 
     uri: 
