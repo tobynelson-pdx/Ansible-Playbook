@@ -18,6 +18,21 @@
       data:
         ZertoLogin: '{{login}}'
 
+  - name: VPG Settings Identifier 
+    uri: 
+      url: "https://inpaw0041.amer.corp.xpo.com:9669/v1/vpgsettings"
+      force_basic_auth: yes
+      method: POST
+      status_code: 200
+      validate_certs: no 
+      headers: 
+        x-zerto-session: x_zerto_session
+        accept: "application/json"
+        content-type: "application/json"
+      body: "{ }"
+      body_format: json
+    register: vpgsettings 
+
   - name: Is vm protected?   
     uri: 
       url: "https://inpaw0041.amer.corp.xpo.com:9669/v1/vms/{{mVMname}}"
