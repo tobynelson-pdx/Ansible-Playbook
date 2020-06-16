@@ -18,3 +18,14 @@
       data:
         ZertoLogin: '{{login}}'
 
+  - name: Is vm protected?   
+    uri: 
+      url: "https://inpaw0041.amer.corp.xpo.com:9669/v1/vms/{{mVMname}}"
+      force_basic_auth: yes
+      method: POST
+      user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+      password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
+      status_code: 200
+      validate_certs: no
+      body_format: json 
+    register: isProtected
