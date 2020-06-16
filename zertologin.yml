@@ -3,13 +3,18 @@
   tasks: 
   - name: ZVM Login  
     uri: 
-      url: "https://192.168.111.20:9669/v1/session/add"
+      url: "https://inpaw0041.amer.corp.xpo.com:9669/v1/session/add"
       force_basic_auth: yes
       method: POST
-      user: "administrator@vsphere.local"
-      password: "Zertodata1!"
+      user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+      password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
       status_code: 200
       validate_certs: no
       body_format: json 
     register: login
+
+  - name: CheckOutPut
+    set_stats:
+      data:
+        ZertoLogin: '{{login}}'
 
